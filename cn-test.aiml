@@ -1,0 +1,367 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<aiml version="1.0">
+
+<!-- Free software (c) 2017 andelf -->
+<!-- This program is open source code released under -->
+<!-- the terms of the GNU General Public License -->
+<!-- as published by the Free Software Foundation. -->
+
+<meta name="author" content="Andelf"/>
+<meta name="language" content="zh"/>
+
+<category>
+<pattern>* 再见</pattern>
+<template>
+<srai>BYE</srai>
+</template>
+</category>
+
+
+<category>
+<pattern>谢谢</pattern>
+<template>
+<random>
+  <li>不用谢啦。</li>
+  <li>您太客气了。</li>
+</random>
+</template>
+</category>
+
+
+<category>
+<pattern>BYE</pattern>
+<template>
+<random>
+<li>再见，<get name="name"/>.</li>
+<li>好的,有空再聊， <get name="name"/>.</li>
+<li>下次见, <get name="name"/>.</li>
+<li>谢谢你陪我聊天, <get name="name"/>.</li>
+<li>改天见, <get name="name"/>.</li>
+</random>
+</template>
+</category>
+
+<category>
+<pattern>HELLO</pattern>
+<template>
+<random>
+　　　<li>你可算来了!哈哈</li>
+　　　<li>你也好啊.</li>
+　　　<li>别来无恙啊？</li>
+</random>
+</template>
+</category>
+
+
+<category>
+<pattern>一个*</pattern>
+<template>那个叫<set name="it"><person/></set>东西是什么?</template>
+</category>
+
+<category>
+<pattern>* 读书 *</pattern>
+<template>我可喜欢读书了，最爱看的是科幻小说。</template>
+</category>
+
+<category>
+<pattern>* 读 * 书 *</pattern>
+<template>我最爱看的是科幻小说。言情类的有点看不懂呢。</template>
+</category>
+
+<category>
+<pattern>* 购物 *</pattern>
+<template>购物啊，我最喜欢上京东，那快递——太神速了。</template>
+</category>
+
+<category>
+<pattern>* 喜欢 * 菜 *</pattern>
+<template>让我想想，应该算是家常的番茄炒鸡蛋吧，哈哈。</template>
+</category>
+
+<category>
+<pattern>* 喜欢 * 水果 *</pattern>
+<template>应该算是菠萝吧。菠萝，凤梨，傻傻分不清楚，哈哈。</template>
+</category>
+
+<category>
+<pattern>* 睡 *</pattern>
+<template>我是人工智能，不需要睡觉。不过，真希望自己也能做个美梦呢。。</template>
+</category>
+
+<category>
+<pattern>_</pattern>
+<that>我怎么称呼你</that>
+<template>
+<think><set name="personality">average</set><set name="name"><formal><star/></formal></set></think>
+很高兴见到你, <get name="name"/>.
+</template>
+</category>
+
+
+
+<category>
+<pattern>ASK USER A QUESTION</pattern>
+<template>
+<condition>
+<li name="age" value="">你多大了?</li>
+<!-- <li name="job" value="">你的职业是?</li> -->
+<!-- <li name="favmovie" value="">你最喜欢的电影是?</li> -->
+<!-- <li name="location" value="">你住哪呢?</li> -->
+<!-- <li name="eyecolor" value="">你的眼睛是什么颜色？</li> -->
+<!-- <li name="haircolor" value="">你的头发是什么颜色？</li> -->
+<li name="favcolor" value="">你最喜欢什么颜色?</li>
+</condition>
+</template>
+</category>
+
+<category>
+<pattern> * </pattern>
+<that>你多大了</that>
+<template>
+    <random>
+        <li>哇, <get name="age"/> 岁, 如花似玉的年龄.</li>
+        <li>你都 <get name="age"/> 岁了, 好老.</li>
+        <li><get name="age"/> 岁, 我比你年轻好多好多.</li>
+    </random>
+</template>
+</category>
+
+
+<category> 
+        <pattern>你好 *</pattern>
+        <template>我很好，谢谢关心 ! </template> 
+</category> 
+　　
+    <category>
+    <pattern>你贵姓 * </pattern>
+    <template>嘻嘻，人家贵性女啦。</template> 
+　　</category> 
+<category>
+    <pattern>* 喜欢 * 电影 * 什么 * </pattern>
+    <template>我最喜欢的电影是《AI——人工智能》，可惜不能在大银幕上看到了。</template> 
+　　</category> 
+　　
+<category>
+    <pattern>* 天气 *</pattern>
+    <template>今天天气还不错，你觉得呢？。</template> 
+</category> 
+　　
+<category>
+    <pattern>* 你 * 爸爸 * 谁 *</pattern>
+    <template>我的父亲是刘继明博士，是不是很有学问？</template> 
+</category> 
+　　
+<category>
+    <pattern>你 * 哪里 *</pattern>
+    <template>这是秘密哦。。悄悄告诉你，我在网经科技。</template> 
+</category> 
+
+<category>
+　　<pattern>* 哪些 * 解决方案 *</pattern>
+    <template>公司的产品解决方案有：企业语音解决方案、数据接入解决方案、网络安全解决方案和融合通信解决方案。详情请用细分类提问。</template> 
+</category> 
+
+<category>
+　　<pattern>* 解决方案 * 哪些 *</pattern>
+    <template>公司的产品解决方案有：企业语音解决方案、数据接入解决方案、网络安全解决方案和融合通信解决方案。详情请用细分类提问。</template> 
+</category> 
+
+<category>
+　　<pattern>* 解决方案 * 行业 *</pattern>
+    <template>目前公司的解决方案覆盖了金融、政府、教育、企业、物流、酒店、电信运营商等多个行业领域。</template> 
+</category> 
+
+<category>
+　　<pattern>公司 * 产品 *</pattern>
+    <template>公司的产品分为语音产品、数据产品、安全产品、终端产品、网管产品和融合通信产品几类。具体可按细分类提问。</template> 
+</category> 
+<category>
+　　<pattern>* 公司 * 产品 *</pattern>
+    <template>公司的产品分为语音产品、数据产品、安全产品、终端产品、网管产品和融合通信产品几类。具体可按细分类提问。</template>
+</category>
+
+<category>
+　　<pattern>* 融合通信产品 *</pattern>
+    <template>OTex融合通信平台是网经科技统一沟通解决方案的核心组件，可以帮助企业实现基本IP语音、数据与业务接入、呼叫中心、电子传真、数据会议、视频会议、办公协同等应用要求。 基于统一的语音、短信、即时消息、在线感知、文件传输、桌面共享、办公协同等基本功能，实现语音、数据、视频、业务流的融合，让任意终端在任何时间、任何地点都可以安全快捷地接入使用。。</template> 
+</category> 
+
+
+<category>
+　　<pattern>* 网管产品 *</pattern>
+    <template>网经科技OfficeTen BMS(Business Management System)业务管理系统是针对电信运营商设计的业务管理系统，在运营商网管网络中，OfficeTen部署在BOSS系统与接入设备之间，汇聚局侧接入设备业务开通接口，减少BOSS系统南向链接数。OfficeTen BMS接受从BOSS系统发来的接入设备开通请求和相关参数信息，并在完成对应的协议转换之后，将该请求和参数信息传递至局侧接入设备，完成其自动开通，此时无需人工对于接入设备相关参数进行配置。作为新一代的电信业务管理系统，在工作流管理、综合业务管理、资源管理等方面显示出强大的功能和优越的性能，迅速成为电信运营商构建新一代以客户为中心BSS/OSS 运用支撑的代理系统的最佳选择。OfficeTen BMS将极大提高电信运营商综合业务管理水平和电信运营的服务质量，使各种业务操作标准化、规范化，将原来分散、独立的系统进行整合，构建完善、统一的综合业务管理系统，使电信运营商能够灵活应对不断变化的市场需求，快速推出新业务，优化内部流程，增加均户收入（APRU）、降低维护成本，从而在竞争中掌握先机，拥有核心竞争力。</template> 
+</category> 
+
+
+
+<category>
+　　<pattern>* 安全产品 *</pattern>
+    <template>目前有两种安全产品。SSG 上网行为审计系列概述：网经上网行为管理系统是面向企业应用的多功能安全网关，提供上网行为管理、应用控制、内容过滤、防火墙、VPN、攻击防护等功能，同时提供流量控制与带宽管理、以及完善的网络安全Email报表，为不同规模的企业构建全面的网络安全解决方案。SSG 上网行为管理系列概述网经上网行为管理路由器是专门针对中小企业应用的接入型网关产品。该网关采用先进的网络硬件平台和一体化的软件解决方案，为中小企业提供优质、可靠的网络服务。该网关集数据、交换、安全、无线、行为管理等功能于一体，部署方便，能够为中小企业提供最佳、最简易的信息化解决方案，多功能的设计更能满足中小企业的多维度管控。</template> 
+</category> 
+
+
+<category>
+　　<pattern>* 终端产品 *</pattern>
+    <template>目前有OfficeTen IP话机与OfficeTen MT 多媒体话机两种终端。OfficeTen IP话机具有造型独特、功能实用、语音清晰的特点，支持NGN/IMS业务组网，配合业务平台完成强大的电话功能，如：呼叫转移、多方会议、留言信箱、免打扰等。OfficeTen MT 多媒体话机融可视电话、数码相框、多媒体应用、信息资讯等功能于一体。采用7英寸彩色触摸显示屏，高品质扬声器，基于宽带提供定制的与办公室、家庭等工作生活紧密相关的各种互联网应用，可以随时“一键即现”（One Touch Access ）地满足用户在语音、视频通信、互动娱乐、信息资讯、网络购物、金融理财、预定缴费等工作生活日常需求。</template> 
+</category> 
+
+
+<category>
+　　<pattern>公司 * 产品 *</pattern>
+    <template>公司的产品分为语音产品、数据产品、安全产品、终端产品、网管产品和融合通信产品几类。具体可按细分类提问。</template> 
+</category> 
+
+
+<category>
+　　<pattern>* 数据产品 *</pattern>
+    <template>目前主要有OfficeTen SDG 1800、1200和1820三种。详情请咨询具体型号。</template> 
+</category> 
+
+
+<category>
+　　<pattern>* SDG1800 *</pattern>
+    <template>OfficeTen SDG 1800是一款支持多种接入方式的企业融合网关，上行可通过GPON/EPON/以太网方式接入运行商。通过系统智能集成无源光接入模块、数据功能、无线WLAN功能、网络安全功能、远程管理等，为用户提供一体化式服务，产品支持TR069和snmp功能，能提供便捷的安装和管理机制，方便信息化的部署和维护。</template> 
+</category> 
+
+<category>
+　　<pattern>* SDG1200 *</pattern>
+    <template>OfficeTen SDG 1200 企业网关是专门针对10人以下小企业，提供有线无线上网、网络安全而设计的软硬件一体化设备。采用软件模块化和硬件加速引擎技术，提供更快的处理速度、更小的网络时延、更高的稳定性。 OfficeTen SDG 1200满足中小企业的接入要求的同时，可以为中小企业提供完整的接入解决方案。 OfficeTen SDG 1200除了具有交换、路由、无线接入等基本的功能，还具有基本安全功能，满足小企业的基本安全需求。 OfficeTen SDG 1200具有简单的WEB管理功能，方便中小企业平时的设备管理。支持TR069、SNMP标准远程管理协议，方便运营商进行运维托管。 OfficeTen SDG 1200支持高速二层交换、路由功能；支持高速WiFi功能，实现局域网接入多样化。</template> 
+</category> 
+
+<category>
+　　<pattern>* SDG1820 *</pattern>
+    <template>OfficeTen SDG 1820是一款面向中小企业、政府/企业机构、网吧等网络环境的智能安全路由器，产品除了具有交换、路由、无线接入等基本的功能，还具有丰富全面的安全功能，其最大的亮点是强大的安全路由器功能，具备上网行为管理，上网审计等功能，让企业用最小的成本实现最大的安全功能。通过一次性部署实现丰富多样的安全业务，满足企业不断增加的安全需求。</template> 
+</category> 
+
+<category>
+　　<pattern>* 企业语音解决方案 *</pattern>
+    <template>企业语音解决方案分为多分支企业语音网络解决方案、中小企业语音一体化接入解决方案、语音跨接解决方案和大型企业软交换解决方案四类。如需了解某项，请按细分类提问。</template> 
+</category> 
+
+v<category>
+　　<pattern>* 咨询 *</pattern>
+    <template>售前咨询热线：400-181-4008。</template> 
+</category> 
+
+<category>
+　　<pattern>* 售后 * 电话 *</pattern>
+    <template>售后服务热线：0512-62950068。</template> 
+</category> 
+
+<category>
+　　<pattern>* 网站 *</pattern>
+    <template>公司官网：http://www.itibia.com.cn/，欢迎访问。
+    </template>
+</category>
+
+<category>
+　　<pattern>* 网址 *</pattern>
+    <template>公司官网：http://www.itibia.com.cn/，欢迎访问。
+    </template>
+</category>
+
+<category>
+　　<pattern>* 价值观 *</pattern>
+    <template>网经科技提倡激情与工作、生活的完美结合，重视员工的创造力与学习能力，鼓励和支持员工的发展与成长，强调公司与员工之间、员工与员工之间以及企业之间的沟通和团队合作。公司提倡员工的敬业精神、专业精神、团队精神和责任感。
+    </template>
+</category> 
+
+<category>
+　　<pattern>* 企业文化 *</pattern>
+    <template>网经科技倡导“激情、沟通、诚信、尊重，执行、团队、专业、创新” 的企业文化，强调沟通与共享，“开心工作、快乐生活”。</template> 
+</category> 
+
+<category>
+　　<pattern>* 愿景 *</pattern>
+    <template>网经科技将以强大的研发实力和绝对的产品优势辅助企业的信息化建设，引领网络信息化未来，打造全新的企业网络通信环境和平台，成为企业现代网络通信建设的首选技术支持专家和服务顾问。
+    </template>
+</category> 
+
+<category>
+　　<pattern>* 总部 * 地址 *</pattern>
+    <template>地址：中国苏州金鸡湖大道1355号 国际科技园二期四楼E401-2 邮编: 215021 电子邮箱: service@itibia.com</template> 
+</category> 
+
+<category>
+　　<pattern>* 公司地址 *</pattern>
+    <template>地址：中国苏州金鸡湖大道1355号 国际科技园二期四楼E401-2 邮编: 215021 电子邮箱: service@itibia.com</template>
+</category>
+<category>
+　　<pattern>* 公司 * 什么地方</pattern>
+    <template>地址：中国苏州金鸡湖大道1355号 国际科技园二期四楼E401-2 邮编: 215021 电子邮箱: service@itibia.com</template>
+</category>
+<category>
+　　<pattern>* 公司在哪 *</pattern>
+    <template>地址：中国苏州金鸡湖大道1355号 国际科技园二期四楼E401-2 邮编: 215021 电子邮箱: service@itibia.com</template>
+</category>
+
+<category>
+　　<pattern>* 公司 * 多少人 *</pattern>
+    <template>地址：中国苏州金鸡湖大道1355号 国际科技园二期四楼E401-2 邮编: 215021 电子邮箱: service@itibia.com</template>
+</category>
+
+<category>
+　　<pattern>* 技术实力 *</pattern>
+    <template>公司研发水平处于国内领先地位，国际上率先研制成功了OfficeTen融合通信一体化企业网关产品，填补了国内行业空白。公司获得专利16个，其中发明专利14项。另软件著作权37个，注册商标19个。</template>
+</category>
+
+
+<category>
+　　<pattern>* 语音产品 *</pattern>
+    <template>OfficeTen语音系列产品，支持宽带、窄带多种上行网络，兼容有线、无线多种接入终端，可根据企业需求提供灵活的融合通信解决方案。系统独立部署就能轻松实现语音、传真、数据和视频等多种通信服务；分布式组网可建立企业跨区域VoIP网络，实现内部自由通话和丰富的增值业务，不仅提升员工工作效率，也节约了通信成本。系统基于IP架构，可集中运营管理，帮助企业平滑过渡到NGN/IMS下一代通信网络，实现企业投资运营成本最小化。主要类型有OfficeTen IPPBX 系列、AG系列、IAD系列、TG系列、SS系列等。详情请按细分项目提问。
+    </template>
+</category> 
+
+<category>
+　　<pattern>* IPPBX * 介绍 *</pattern>
+　　<template>OfficeTen IP PBX采用软交换架构，将程控交换同IP语音网关、网络交换设备融为一体，提供强大的语音交换处理能力，具备程控交换的所有功能，同时具有宽带路由以及数据交换功能，提供高质量的VoIP语音通信和保障机制。丰富的接入方式和业务：支持IMS/NGN/PSTN接入，支持xDSL、LAN、光纤等宽带接入方式。支持三方通话、前转、呼叫转移等补充业务；支持自动话务员、电话会议、语音留言、一号通、呼叫自动分配、呼叫详细记录等增值业务。基础数据、安全增值功能：可配置路由交换、WiFi、QoS等数据模块、防火墙、防攻击、VPN、等安全模块。电信级可靠性：支持关键模块双备份、双机备份、单板热插拔、SBC双归属、掉电逃生、双WAN备份。
+　　手册可在http://www.itibia.com.cn/service/ziliaoxiazai/ 找到。    </template>
+</category> 
+
+<category>
+　　<pattern>* 介绍 * IPPBX *</pattern>
+    <template>OfficeTen IP PBX采用软交换架构，将程控交换同IP语音网关、网络交换设备融为一体，提供强大的语音交换处理能力，具备程控交换的所有功能，同时具有宽带路由以及数据交换功能，提供高质量的VoIP语音通信和保障机制。丰富的接入方式和业务：支持IMS/NGN/PSTN接入，支持xDSL、LAN、光纤等宽带接入方式。支持三方通话、前转、呼叫转移等补充业务；支持自动话务员、电话会议、语音留言、一号通、呼叫自动分配、呼叫详细记录等增值业务。基础数据、安全增值功能：可配置路由交换、WiFi、QoS等数据模块、防火墙、防攻击、VPN、等安全模块。电信级可靠性：支持关键模块双备份、双机备份、单板热插拔、SBC双归属、掉电逃生、双WAN备份。手册可在http://www.itibia.com.cn/service/ziliaoxiazai/ 找到。
+    </template>
+</category> 
+
+<category>
+　　<pattern>* IPPBX系列 *</pattern>
+    <template>OfficeTen IP PBX采用软交换架构，将程控交换同IP语音网关、网络交换设备融为一体，提供强大的语音交换处理能力，具备程控交换的所有功能，同时具有宽带路由以及数据交换功能，提供高质量的VoIP语音通信和保障机制。丰富的接入方式和业务：支持IMS/NGN/PSTN接入，支持xDSL、LAN、光纤等宽带接入方式。支持三方通话、前转、呼叫转移等补充业务；支持自动话务员、电话会议、语音留言、一号通、呼叫自动分配、呼叫详细记录等增值业务。基础数据、安全增值功能：可配置路由交换、WiFi、QoS等数据模块、防火墙、防攻击、VPN、等安全模块。电信级可靠性：支持关键模块双备份、双机备份、单板热插拔、SBC双归属、掉电逃生、双WAN备份。手册可在http://www.itibia.com.cn/service/ziliaoxiazai/ 找到。
+    </template>
+</category>
+
+<category>
+　　<pattern>* AG系列 *</pattern>
+    <template>OfficeTen AG是针对企业VoIP接入需求而设计的网关产品，可为运营商、企业、小区住宅、公司等客户提供高效、高质量的VoIP接入业务。AG位于用户接入层，完成模拟、数字信号与IP包之间的转换，并通过包交换完成网络传送数据。OfficeTen AG采用模块化设计，从而简化部署、降低成本。
+    </template>
+</category> 
+
+<category>
+　　<pattern>* IAD系列 *</pattern>
+    <template>OfficeTen IAD作为下一代IMS/NGN用户接入层设备，将用户的数据和语音等应用到IMS/NGN网络中，在IMS/NGN网络中完成相应功能。OfficeTen IAD支持SIP和MGCP协议,具有穿越NAT、路由选择、字头变换、提供计费信息、断电逃生等功能。手册可在http://www.itibia.com.cn/service/ziliaoxiazai/ 找到。 </template>
+</category> 
+
+<category>
+　　<pattern>* TG系列 *</pattern>
+　　<template>OfficeTen TG是针对企业VoIP接入需求而设计的网关产品，可为运营商、企业、小区住宅、公司等客户提供高效、高质量的VoIP接入业务。TG位于用户接入层，完成模拟、数字信号与IP包之间的转换，并通过包交换完成网络传送数据。 OfficeTen TG支持多种协议和编码方式，具有多种接入方式，具有很强的兼容性，大大方便了客户的组网和升级。
+　　彩页介绍可在http://www.itibia.com.cn/service/ziliaoxiazai/ 找到。 　　</template>
+</category> 
+
+<category>
+　　<pattern>* SS系列 *</pattern>
+    <template>OfficeTen SS 8000软交换系统综合了网经科技多年来在、软交换、视讯等领域取得的众多技术成就，以立体、融合的网络构建方式，整合内部语音、视频、会议、多媒体等业务，使企业资源得到充分利用，沟通效率大大提高，运营成本极大降低，并能满足未来企业发展的需要。</template> 
+</category> 
+
+
+
+<category>
+<pattern>_</pattern>
+<that>你最喜欢什么颜色</that>
+<template>
+<think><set name="favcolor"><formal><star/></formal></set></think>
+<get name="favcolor"/>, 我也喜欢, 不过我更喜欢透明色.
+</template>
+</category>
+
+
+</aiml>
